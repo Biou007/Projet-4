@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -18,6 +18,60 @@
     <meta
       name="description"
       content="Photographe professionnelle spécialisée en mariages, portraits, concerts et photographie d’entreprise. Découvrez le portfolio de Nina Carducci."
+    />
+
+    <!-- Référencement local - Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Nina Carducci",
+        "image": "https://www.nina-carducci-photographe.fr/assets/images/nina.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "68 avenue Alsace-Lorraine",
+          "addressLocality": "Bordeaux",
+          "postalCode": "33200",
+          "addressCountry": "FR"
+        },
+        "telephone": "+33 5 56 67 78 89",
+        "openingHours": "Mo-Fr 10:00-19:00",
+        "url": "https://www.nina-carducci-photographe.fr"
+      }
+    </script>
+
+    <!-- Open Graph pour le partage social -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Nina Carducci - Photographe professionnelle"
+    />
+    <meta
+      property="og:description"
+      content="Photographe professionnelle spécialisée en mariages, portraits, concerts et photographie d’entreprise. Découvrez le portfolio de Nina Carducci."
+    />
+    <meta
+      property="og:image"
+      content="https://www.nina-carducci-photographe.fr/assets/images/nina.webp"
+    />
+    <meta
+      property="og:url"
+      content="https://www.nina-carducci-photographe.fr"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Nina Carducci - Photographe professionnelle"
+    />
+    <meta
+      name="twitter:description"
+      content="Photographe spécialisée en mariages, portraits, concerts et photographie d’entreprise. Découvrez le portfolio de Nina Carducci."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.nina-carducci-photographe.fr/assets/images/nina.webp"
     />
 
     <script src="./assets/bootstrap/bootstrap.bundle.js"></script>
@@ -93,6 +147,7 @@
                 alt="Photographie corporate"
                 width="1600"
                 height="740"
+                fetchpriority="high"
               />
             </div>
             <div class="carousel-item">
@@ -102,6 +157,7 @@
                 alt="Concert en public"
                 width="1600"
                 height="740"
+                fetchpriority="high"
               />
             </div>
             <div class="carousel-item">
@@ -111,6 +167,7 @@
                 alt="Photographie de mariage"
                 width="1600"
                 height="739"
+                fetchpriority="high"
               />
             </div>
           </div>
