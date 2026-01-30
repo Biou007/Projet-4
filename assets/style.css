@@ -90,9 +90,57 @@ body {
   font-size: 14px;
 }
 
-#gallery {
-  /*	min-height: 100vh; */
+.carousel-indicators button {
+  background-color: #000;
+  opacity: 0.8;
 }
+
+.carousel-indicators .active {
+  background-color: #fff;
+  opacity: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centre horizontalement dans le bouton */
+  bottom: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #000; /* noir = contraste élevé */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+}
+.carousel-control-prev {
+  left: 3rem;
+}
+
+.carousel-control-next {
+  right: 3rem;
+}
+
+.carousel-control-prev::after {
+  content: "<";
+}
+
+.carousel-control-next::after {
+  content: ">";
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: #333;
+}
+
 .title {
   text-align: center;
   padding-block: 2em;
@@ -125,6 +173,10 @@ body {
   height: 100%;
   object-fit: cover;
   padding: 0.5em;
+}
+.img-fluid {
+  width: 100%;
+  height: auto;
 }
 .mg-prev,
 .mg-next {

@@ -8,7 +8,7 @@
         $.fn.mauGallery.methods.createLightBox(
           $(this),
           options.lightboxId,
-          options.navigation
+          options.navigation,
         );
       }
       $.fn.mauGallery.listeners(options);
@@ -33,7 +33,7 @@
         $.fn.mauGallery.methods.showItemTags(
           $(this),
           options.tagsPosition,
-          tagsCollection
+          tagsCollection,
         );
       }
 
@@ -61,10 +61,10 @@
 
     $(".gallery").on("click", ".nav-link", $.fn.mauGallery.methods.filterByTag);
     $(".gallery").on("click", ".mg-prev", () =>
-      $.fn.mauGallery.methods.prevImage(options.lightboxId)
+      $.fn.mauGallery.methods.prevImage(options.lightboxId),
     );
     $(".gallery").on("click", ".mg-next", () =>
-      $.fn.mauGallery.methods.nextImage(options.lightboxId)
+      $.fn.mauGallery.methods.nextImage(options.lightboxId),
     );
   };
 
@@ -77,7 +77,7 @@
     wrapItemInColumn(element, columns) {
       if (columns.constructor === Number) {
         element.wrap(
-          `<div class='item-column mb-4 col-${Math.ceil(12 / columns)}'></div>`
+          `<div class='item-column mb-4 col-${Math.ceil(12 / columns)}'></div>`,
         );
       } else if (columns.constructor === Object) {
         var columnClasses = "";
@@ -99,7 +99,7 @@
         element.wrap(`<div class='item-column mb-4${columnClasses}'></div>`);
       } else {
         console.error(
-          `Columns should be defined as numbers or objects. ${typeof columns} is not supported.`
+          `Columns should be defined as numbers or objects. ${typeof columns} is not supported.`,
         );
       }
     },
@@ -118,7 +118,7 @@
       $(`#${lightboxId}`).modal("toggle");
     },
 
-    // ✅ Version corrigée de prevImage
+    // Version corrigée de prevImage
     prevImage() {
       let activeImage = null;
       $("img.gallery-item").each(function () {
@@ -140,18 +140,18 @@
       });
 
       let index = imagesCollection.findIndex(
-        (img) => $(img).attr("src") === $(activeImage).attr("src")
+        (img) => $(img).attr("src") === $(activeImage).attr("src"),
       );
       let prevIndex =
         (index - 1 + imagesCollection.length) % imagesCollection.length;
 
       $(".lightboxImage").attr(
         "src",
-        $(imagesCollection[prevIndex]).attr("src")
+        $(imagesCollection[prevIndex]).attr("src"),
       );
     },
 
-    // ✅ Version corrigée de nextImage
+    // Version corrigée de nextImage
     nextImage() {
       let activeImage = null;
       $("img.gallery-item").each(function () {
@@ -173,13 +173,13 @@
       });
 
       let index = imagesCollection.findIndex(
-        (img) => $(img).attr("src") === $(activeImage).attr("src")
+        (img) => $(img).attr("src") === $(activeImage).attr("src"),
       );
       let nextIndex = (index + 1) % imagesCollection.length;
 
       $(".lightboxImage").attr(
         "src",
-        $(imagesCollection[nextIndex]).attr("src")
+        $(imagesCollection[nextIndex]).attr("src"),
       );
     },
 
